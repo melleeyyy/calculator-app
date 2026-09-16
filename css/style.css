@@ -1,0 +1,173 @@
+/* ============================================
+   Calculator — style.css
+   Dark, modern theme with a responsive layout
+   ============================================ */
+
+:root {
+  --bg: #101418;
+  --panel: #1b2129;
+  --display-bg: #141922;
+  --key-bg: #262f3a;
+  --key-bg--hover: #313d4b;
+  --key-bg--active: #3a4859;
+  --key-text: #e8edf3;
+  --function-bg: #34404f;
+  --function-text: #8fd3ff;
+  --operator-bg: #2c5f8a;
+  --operator-text: #bfe3ff;
+  --equals-bg: #0f8ce8;
+  --equals-text: #ffffff;
+  --history-text: #7d8b9c;
+  --display-text: #f4f7fb;
+  --accent-glow: rgba(15, 140, 232, 0.35);
+  --radius: 14px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Segoe UI", system-ui, -apple-system, Roboto, sans-serif;
+  background: radial-gradient(circle at 20% 20%, #1a2230 0%, var(--bg) 60%);
+  color: var(--key-text);
+  padding: 16px;
+}
+
+/* ---------- Calculator shell ---------- */
+
+.calculator {
+  width: 100%;
+  max-width: 340px;
+  background: var(--panel);
+  border-radius: 22px;
+  padding: 18px;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.45);
+}
+
+/* ---------- Display ---------- */
+
+.display {
+  background: var(--display-bg);
+  border-radius: var(--radius);
+  padding: 18px 16px;
+  margin-bottom: 16px;
+  text-align: right;
+  min-height: 96px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 6px;
+  overflow: hidden;
+}
+
+.display__history {
+  font-size: 0.95rem;
+  color: var(--history-text);
+  min-height: 1.2em;
+  white-space: nowrap;
+}
+
+.display__current {
+  font-size: 2.6rem;
+  font-weight: 600;
+  color: var(--display-text);
+  word-break: break-all;
+  line-height: 1.1;
+}
+
+/* ---------- Keypad ---------- */
+
+.keypad {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+.key {
+  border: none;
+  border-radius: var(--radius);
+  padding: 0;
+  height: 62px;
+  font-size: 1.35rem;
+  font-family: inherit;
+  font-weight: 500;
+  color: var(--key-text);
+  background: var(--key-bg);
+  cursor: pointer;
+  transition: background 0.15s ease, transform 0.05s ease;
+  user-select: none;
+}
+
+.key:hover {
+  background: var(--key-bg--hover);
+}
+
+.key:active {
+  background: var(--key-bg--active);
+  transform: scale(0.96);
+}
+
+.key:focus-visible {
+  outline: 2px solid var(--equals-bg);
+  outline-offset: 2px;
+}
+
+.key--zero {
+  grid-column: span 1;
+}
+
+.key--function {
+  background: var(--function-bg);
+  color: var(--function-text);
+  font-size: 1.15rem;
+}
+
+.key--function:hover {
+  filter: brightness(1.15);
+}
+
+.key--operator {
+  background: var(--operator-bg);
+  color: var(--operator-text);
+  font-size: 1.5rem;
+}
+
+.key--operator.is-selected {
+  background: var(--equals-bg);
+  color: var(--equals-text);
+  box-shadow: 0 0 14px var(--accent-glow);
+}
+
+.key--equals {
+  background: var(--equals-bg);
+  color: var(--equals-text);
+  font-size: 1.6rem;
+}
+
+.key--equals:hover {
+  filter: brightness(1.1);
+}
+
+/* ---------- Small screens ---------- */
+
+@media (max-width: 380px) {
+  .display__current {
+    font-size: 2.1rem;
+  }
+
+  .key {
+    height: 56px;
+    font-size: 1.2rem;
+  }
+}
