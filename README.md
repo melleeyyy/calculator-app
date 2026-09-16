@@ -2,6 +2,8 @@
 
 A clean, modern web calculator built with plain **HTML, CSS and JavaScript** — no frameworks, no build tools, no dependencies.
 
+**Try it live:** https://melleeyyy.github.io/calculator-app/
+
 ## Features
 
 - Basic operations: add, subtract, multiply, divide
@@ -15,13 +17,20 @@ A clean, modern web calculator built with plain **HTML, CSS and JavaScript** —
 
 ## Getting Started
 
-No installation needed. Just open `index.html` in any modern browser:
+### Option 1: Use the live site
+
+Open https://melleeyyy.github.io/calculator-app/ in any browser — nothing to install.
+
+### Option 2: Run locally
+
+No installation needed either. Just open `index.html` in any modern browser:
 
 1. Download or clone this repository:
    ```bash
    git clone https://github.com/melleeyyy/calculator-app.git
    ```
-2. Open `index.html` (double-click it, or right-click → Open With → your browser).
+2. Extract the full ZIP (if downloaded) so the `css/` and `js/` folders sit next to `index.html`.
+3. Open `index.html` (double-click it, or right-click → Open With → your browser).
 
 That's it — the calculator runs entirely offline.
 
@@ -34,6 +43,7 @@ calculator-app/
 │   └── style.css     # Theme, layout and responsive rules
 ├── js/
 │   └── script.js     # Calculator logic and keyboard handling
+├── LICENSE           # MIT License
 └── README.md
 ```
 
@@ -54,4 +64,4 @@ Issues and pull requests are welcome.
 
 ## License
 
-No license file yet — add one (e.g. MIT) if you plan to share this code.
+This project is licensed under the [MIT License](LICENSE).
