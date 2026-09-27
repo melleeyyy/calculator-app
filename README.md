@@ -2,8 +2,6 @@
 
 A clean, modern web calculator built with plain **HTML, CSS and JavaScript** — no frameworks, no build tools, no dependencies.
 
-**Try it live:** https://melleeyyy.github.io/calculator-app/
-
 ## Features
 
 - Basic operations: add, subtract, multiply, divide
